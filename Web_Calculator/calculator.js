@@ -9,6 +9,7 @@ function numberBtnHandler(number)
 	acc = accum(number);
 	setText(getText() + number)
 	op_true = false;
+	first = false;
 }
 
 function setText(text)
@@ -54,15 +55,20 @@ function accum(anything)
 
 function add()
 {
-	reset();
-	if (op_true == true) {
+	if (first == true){
 		alert("error");
-		reset();
+
 	}
 	else
-		accum("+");
-		op_true = true;
-		first = false;
+		reset();
+		if (op_true == true) {
+			alert("error");
+			reset();
+		}
+		else
+			accum("+");
+			op_true = true;
+			first = false;
 }
 
 function sub()
@@ -88,28 +94,36 @@ function sub()
 
 function div()
 {
-	reset();
-	if (op_true == true) {
+	if(first == true){
 		alert("error");
-		reset();
 	}
 	else
-		accum("/");
-		op_true = true;
-		first = false;
+		reset();
+		if (op_true == true) {
+			alert("error");
+			reset();
+		}
+		else
+			accum("/");
+			op_true = true;
+			first = false;
 }
 
 function mul()
 {
-	reset();
-	if (op_true == true) {
+	if(first == true){
 		alert("error");
-		reset();
 	}
 	else
-		accum("*");
-		op_true = true;
-		first = false;
+		reset();
+		if (op_true == true) {
+			alert("error");
+			reset();
+		}
+		else
+			accum("*");
+			op_true = true;
+			first = false;
 }
 
 function jum()
